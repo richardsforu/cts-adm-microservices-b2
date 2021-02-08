@@ -28,6 +28,14 @@ public class Passenger {
 	joinColumns = {@JoinColumn(name="passengerId")},
 	inverseJoinColumns = {@JoinColumn(name="copassengerId")})
 	private List<CoPassenger> coPassengers=new ArrayList<>();
+	
+	public List<CoPassenger> getCoPassengers() {
+		return coPassengers;
+	}
+
+	public void setCoPassengers(List<CoPassenger> coPassengers) {
+		this.coPassengers = coPassengers;
+	}
 
 	public int getPassengerId() {
 		return passengerId;
