@@ -1,10 +1,15 @@
 package com.cts.flight.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Passenger {
@@ -18,7 +23,11 @@ public class Passenger {
 	private String gender;
 	
 	
-	//private List<E>
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinTable(name="copassengers",
+	joinColumns = {@JoinColumn(name="passengerId")},
+	inverseJoinColumns = {@JoinColumn(name="copassengerId")})
+	private List<CoPassenger> coPassengers=new ArrayList<>();
 
 	public int getPassengerId() {
 		return passengerId;
