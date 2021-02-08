@@ -51,13 +51,11 @@ public class FlightRestController {
 		List<Flight> flights = dao.findFlightByOriginAndDestinationAndFlightDate(qry.getOrigin(), qry.getDestination(),
 				qry.getFlightDate());
 
-		System.out.println(">>> LIST Size: " + flights.size());
-		System.out.println("Passengers: " + qry.getNumberofPassengers());
+	
 
 		flights = flights.stream().filter(flight -> flight.getInventory().getCount() >= qry.getNumberofPassengers())
 				.collect(Collectors.toList());
 
-		System.out.println("<<<< LIST Size: " + flights.size());
 
 		return flights;
 	}
