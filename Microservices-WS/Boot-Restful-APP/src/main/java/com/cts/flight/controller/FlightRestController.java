@@ -99,7 +99,7 @@ public class FlightRestController {
 	public ResponseEntity<Object> checkin(@PathVariable("bookingId")int bookingId) {
 		
 		if(checkinDao.findByBookingId(bookingId)!=null) {
-			return new ResponseEntity<Object>("Booking ID "+bookingId+" is already checkin. Can not recheckin",HttpStatus.OK);
+			return new ResponseEntity<Object>("Booking ID "+bookingId+" is already checkedin. Can not recheckin",HttpStatus.OK);
 		}
 		
 		CheckIn checkin=new CheckIn();
