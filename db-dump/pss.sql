@@ -64,9 +64,7 @@ INSERT INTO `booking_record` VALUES (98, '2021-02-05 14:43:23', 'DELHI', 10000, 
 INSERT INTO `booking_record` VALUES (103, '2021-02-05 14:43:23', 'CHENNAI', 6200, '2021-02-26', 'UK-830', '10:15:00', 'DELHI', 'CONFIRMED', 62, 104);
 COMMIT;
 
--- ----------------------------
--- Table structure for check_in
--- ----------------------------
+
 DROP TABLE IF EXISTS `check_in`;
 CREATE TABLE `check_in` (
   `checkin_id` int(11) NOT NULL,
